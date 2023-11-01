@@ -1,11 +1,12 @@
 package Baitap;
 
 import driver.driverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class testcase04 {
 
@@ -45,6 +46,8 @@ public class testcase04 {
             driver.close();
             driver.switchTo().window(mainWindowHandle);
 
+            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshotFile, new File("C:\\Users\\HP\\Desktop\\SWT\\SWT\\selenium-webdriver-java\\screenshottestcase4.png"));
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Test failed due to exception: " + e.getMessage());

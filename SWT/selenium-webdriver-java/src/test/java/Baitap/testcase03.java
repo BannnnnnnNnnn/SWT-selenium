@@ -22,11 +22,12 @@ Test Steps:
 package Baitap;
 
 import driver.driverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class testcase03 {
 
@@ -68,6 +69,8 @@ public class testcase03 {
             // Step 7: Verify cart is empty
             Assert.assertEquals(emptyCartMessage.getText(),"SHOPPING CART IS EMPTY");
 
+            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshotFile, new File("C:\\Users\\HP\\Desktop\\SWT\\SWT\\selenium-webdriver-java\\screenshottestcase3.png"));
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Test failed due to exception: " + e.getMessage());

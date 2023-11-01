@@ -19,11 +19,12 @@ Test Steps:
 package Baitap;
 
 import driver.driverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class testcase02 {
 
@@ -54,6 +55,9 @@ public class testcase02 {
 
             //6. Compare Product value in list and details page should be equal ($100).
             Assert.assertEquals(sonyXperiaPrice, sonyXperiaDetailPrice);
+
+            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshotFile, new File("C:\\Users\\HP\\Desktop\\SWT\\SWT\\selenium-webdriver-java\\screenshottestcase2.png"));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

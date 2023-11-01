@@ -46,7 +46,7 @@ public class testcase01 {
             dropdown.selectByVisibleText("Name");
             //6. screenshot
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshotFile, new File("C:\\Users\\HP\\Desktop\\selenium-webdriver-java\\selenium-webdriver-java\\screenshot.png"));
+            FileUtils.copyFile(screenshotFile, new File("C:\\Users\\HP\\Desktop\\SWT\\SWT\\selenium-webdriver-java\\screenshottestcase1.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
