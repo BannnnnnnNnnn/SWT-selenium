@@ -38,7 +38,7 @@ public class testcase05 {
     public void Testcase05(){
         String firstName = "Bann";
         String lastName = "Tran";
-        String email = "TranVanGiaBantest9223913123sasd@gmail.com";
+        String email = "TranVanGiaBantest9223913123sasd999@gmail.com";
         String password = "123456";
         String confirmPassword = password;
 
